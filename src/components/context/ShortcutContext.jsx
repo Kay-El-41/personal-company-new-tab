@@ -11,7 +11,7 @@ export const WorkContextProvider = ({ children }) => {
     initialState = JSON.parse(isExisted)
   } catch (error) {
     initialState = {
-      shortcutList: [{ link: 'www.power.com', name: 'Power' }],
+      shortcutList: [],
     }
   } finally {
   }
