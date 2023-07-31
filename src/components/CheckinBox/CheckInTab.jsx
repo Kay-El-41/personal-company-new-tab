@@ -13,12 +13,12 @@ const CheckInTab = () => {
     if (tasks.yesterday.length > 0 && tasks.today.length > 0) setShowForm(false)
   }
 
-  const resetHandler = () => {
+  const taskFormResetHandler = () => {
     setTasks({ yesterday: [], today: [] })
   }
 
   return (
-    <section className=" flex flex-col p-4 w-full h-[fit] bg-white shadow-md rounded-md col-start-2">
+    <section className=" flex flex-col p-4 w-full h-[fit] bg-white shadow-md rounded-md col-start-2 row-start-2">
       <div className="relative flex justify-between items-center text-xl border-b-2 pb-4 border-purple-200">
         <h2 className="font-semibold">Check-In Generator</h2>
       </div>
@@ -28,13 +28,14 @@ const CheckInTab = () => {
           <div className="space-x-2 mt-2">
             <button
               className="bg-red-500 rounded-md shadow-sm p-2 text-white w-[100px] self hover:bg-red-600 active:scale-95"
-              onClick={resetHandler}
+              onClick={taskFormResetHandler}
             >
               Reset
             </button>
             <button
-              className="bg-purple-500 rounded-md shadow-sm p-2 text-white w-[100px] self hover:bg-purple-600 active:scale-95"
+              className="bg-purple-500 rounded-md shadow-sm p-2 text-white w-[100px] self hover:bg-purple-600 active:scale-95 disabled:bg-purple-300"
               onClick={generateHandler}
+              disabled={tasks.yesterday.length == 0 || tasks.today.length == 0}
             >
               Generate
             </button>

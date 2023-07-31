@@ -3,7 +3,6 @@ import figmaLogo from '../../assets/figma-logo.svg'
 
 import { BsSkype, BsGithub } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import { FiFigma } from 'react-icons/fi'
 
 const ShortCutBox = ({ children, title, linkTo }) => {
   return (
@@ -18,9 +17,9 @@ const ShortCutBox = ({ children, title, linkTo }) => {
 
 const ShortcutTab = () => {
   return (
-    <section className="flex flex-col p-4 w-full h-[250px] bg-white shadow-md rounded-md col-span-2 col-start-2">
+    <section className="flex flex-col p-4 w-full h-[250px] bg-white shadow-md rounded-md col-span-1 col-start-3">
       <div className="relative flex justify-between items-center text-xl border-b-2 pb-4 border-purple-200">
-        <h2 className="font-semibold">Work Shortcuts</h2>
+        <h2 className="font-semibold">Main Shortcuts</h2>
       </div>
       {/* ShortCut Box */}
       <div className="h-full flex items-center flex-wrap justify-start gap-3">
@@ -37,7 +36,6 @@ const ShortcutTab = () => {
 
         <ShortCutBox title={'Figma'} linkTo={'https://figma.com/'}>
           <img src={figmaLogo} alt="" className="w-10 mx-auto" />
-          {/* <FiFigma className=" text-6xl text-[#fd3d39]" /> */}
         </ShortCutBox>
       </div>
     </section>

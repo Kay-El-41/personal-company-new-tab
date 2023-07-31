@@ -4,6 +4,9 @@ import TodoTab from './components/ToDoBox/TodoTab'
 import { ToDoContextProvider } from './components/context/ToDoContext'
 import ShortcutTab from './components/ShortcutBox/ShortcutTab'
 import CheckInTab from './components/CheckinBox/CheckInTab'
+import WorkShortcutTab from './components/ShortcutBox/WorkShortcutTab'
+import { WorkContextProvider } from './components/context/ShortcutContext'
+import InfoBox from './components/InfoBox/InfoBox'
 
 function App() {
   return (
@@ -13,10 +16,12 @@ function App() {
         <ToDoContextProvider>
           <TodoTab />
         </ToDoContextProvider>
+        <WorkContextProvider>
+          <WorkShortcutTab />
+        </WorkContextProvider>
         <ShortcutTab />
-        {/* <div className=""></div>
-        <div className="w-[250px] h-20 bg-pink-500 rounded-sm col-start-2 col-span-2"></div> */}
-        <CheckInTab/>
+        <CheckInTab />
+        {/* <InfoBox /> */}
       </main>
     </>
   )

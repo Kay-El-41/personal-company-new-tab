@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import { BsPlus, BsX } from 'react-icons/bs'
-import TodoNew from './TodoNew'
 import ToDoListItem from './ToDoListItem'
 import { useToDoList } from '../context/ToDoContext'
+import AddNew from '../Common/AddNew'
 
 const TodoTab = () => {
   const [showNewTab, setShowNewTab] = useState(false)
   const [showEdit, setShowEdit] = useState(false)
   const {
     state: { toDoList },
+    dispatch,
   } = useToDoList()
+
+  const addToDoList = (taskInput) => {
+    dispatch({
+      type: 'ADD_TO_LIST',
+      payload: taskInput,
+    })
+    dispatch({ type: 'SAVE_LOCAL' })
+  }
 
   return (
     // Main Box
@@ -31,7 +40,13 @@ const TodoTab = () => {
             }
           />
         </div>
-        {showNewTab && <TodoNew showTab={setShowNewTab} />}
+        {showNewTab && (
+          <AddNew
+            showTab={setShowNewTab}
+            addFunction={addToDoList}
+            title={'Add New Todo'}
+          />
+        )}
       </div>
       {/* Task List */}
       <div className="p-4 [&>*:not(:last-child)]:border-b">

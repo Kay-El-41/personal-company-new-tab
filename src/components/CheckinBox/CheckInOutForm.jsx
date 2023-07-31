@@ -27,13 +27,13 @@ const CheckInOutForm = ({ tasks, setTasks }) => {
         <div className="flex flex-col gap-2">
           <label htmlFor="yesterdayJob" className="flex justify-between">
             What did you do yesterday?&nbsp;
-            <span className="text-purple-400">
+            <span className="text-black/50">
               Total: {tasks.yesterday.length}
             </span>
           </label>
           <input
             type="text"
-            className="p-2 outline-purple-400 rounded-sm bg-slate-50 placeholder:text-sm"
+            className="p-2 outline-purple-400 rounded-md bg-slate-50 placeholder:text-sm"
             id="yesterdayJob"
             name="yesterday"
             placeholder="Press enter to save"
@@ -46,11 +46,11 @@ const CheckInOutForm = ({ tasks, setTasks }) => {
         <div className="flex flex-col gap-2">
           <label htmlFor="todayJob" className="flex justify-between">
             What will you do today?&nbsp;
-            <span className="text-purple-400">Total: {tasks.today.length}</span>
+            <span className="text-black/50">Total: {tasks.today.length}</span>
           </label>
           <input
             type="text"
-            className="p-2 outline-purple-400 rounded-sm bg-slate-50 placeholder:text-sm"
+            className="p-2 outline-purple-400 rounded-md bg-slate-50 placeholder:text-sm"
             id="todayJob"
             name="today"
             placeholder="Press enter to save"
