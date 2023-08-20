@@ -18,7 +18,7 @@ const CheckInTab = () => {
   }
 
   return (
-    <section className=" flex flex-col p-4 w-full h-[fit] bg-white shadow-md rounded-md col-start-2 row-start-2">
+    <section className=" flex overflow-hidden flex-col p-4 w-full h-[fit] relative bg-white shadow-md rounded-md col-start-2 row-start-2">
       <div className="relative flex justify-between items-center text-xl border-b-2 pb-4 border-purple-200">
         <h2 className="font-semibold">Check-In Generator</h2>
       </div>
